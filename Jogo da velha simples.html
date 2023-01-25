@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jogo da Velha</title>
+    <style>
+      
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      td {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td id="cell-1"></td>
+        <td id="cell-2"></td>
+        <td id="cell-3"></td>
+      </tr>
+      <tr>
+        <td id="cell-4"></td>
+        <td id="cell-5"></td>
+        <td id="cell-6"></td>
+      </tr>
+      <tr>
+        <td id="cell-7"></td>
+        <td id="cell-8"></td>
+        <td id="cell-9"></td>
+      </tr>
+    </table>
+    <script>
+            // Armazena o jogador atual (X ou O)
+var currentPlayer = "X";
+
+// Armazena as células do jogo em um array
+var cells = document.querySelectorAll("td");
+
+// Adiciona evento de clique às células do jogo
+for (var i = 0; i < cells.length; i++) {
+  cells[i].addEventListener("click", function(event) {
+    // Preenche a célula com o jogador atual
+    event.target.textContent = currentPlayer;
+    
+    // Alterna o jogador atual
+    if (currentPlayer === "X") {
+      currentPlayer = "O";
+    } else {
+      currentPlayer = "X";
+    }
+  });
+}
+
+
+    </script>
+  </body>
+</html>
